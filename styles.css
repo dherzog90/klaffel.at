@@ -1,0 +1,328 @@
+/* ==========================================================================
+   Elektro W. Klaffel e.U. – brand overrides on top of Pico.css
+   All assets self-hosted (no CDN). Fonts: Cabin (Gill-Sans-like, OFL) and
+   Inconsolata (Consolas-like, OFL) as open fallbacks for the proprietary
+   system fonts listed in the brand guidelines.
+   ========================================================================== */
+
+/* ---- Self-hosted fonts -------------------------------------------------- */
+@font-face {
+  font-family: "Cabin";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/cabin-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Cabin";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/cabin-600.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Cabin";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/cabin-700.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Inconsolata";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/inconsolata-400.woff2") format("woff2");
+}
+
+/* ---- Brand theme (Pico variables) -------------------------------------- */
+:root {
+  --brand-primary: #b81c1d;
+  --brand-primary-hover: #9a1718;
+  --brand-secondary: #464545;
+
+  /* Fonts: proprietary system fonts first, self-hosted open fallback after */
+  --pico-font-family-sans-serif: "Gill Sans MT", "Gill Sans", "Cabin", "Segoe UI", Calibri, sans-serif;
+  --pico-font-family-monospace: "Consolas", "Consola Mono", "Inconsolata", ui-monospace, monospace;
+  --pico-font-family: var(--pico-font-family-sans-serif);
+
+  scroll-behavior: smooth;
+}
+
+/* Pico ships its light-theme colour tokens under a higher-specificity selector
+   (:root:not([data-theme=dark])). A plain :root override is silently ignored –
+   which is why links/focus rings stayed Pico-blue. Match that specificity. */
+:root:not([data-theme=dark]),
+[data-theme="light"] {
+  /* Primary colour mapped to brand red (links, focus rings, accents) */
+  --pico-primary: var(--brand-primary);
+  --pico-primary-background: var(--brand-primary);
+  --pico-primary-hover: var(--brand-primary-hover);
+  --pico-primary-hover-background: var(--brand-primary-hover);
+  --pico-primary-border: var(--brand-primary);
+  --pico-primary-underline: rgba(184, 28, 29, 0.5);
+  --pico-primary-focus: rgba(184, 28, 29, 0.3);
+
+  --pico-color: var(--brand-secondary);
+  --pico-h1-color: var(--brand-secondary);
+  --pico-h2-color: var(--brand-secondary);
+  --pico-h3-color: var(--brand-secondary);
+}
+
+/* Offset anchored sections so the sticky header doesn't cover headings */
+section[id],
+footer[id] {
+  scroll-margin-top: 6rem;
+}
+
+body {
+  color: var(--brand-secondary);
+}
+
+/* ---- Sticky header ------------------------------------------------------ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #fff;
+  border-bottom: 3px solid var(--brand-primary);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+}
+.site-logo {
+  height: 76px;
+  width: auto;
+  display: block;
+}
+.site-header nav ul {
+  margin: 0;
+  padding: 0;
+  gap: 0.25rem;
+}
+.site-header nav a {
+  --pico-color: var(--brand-secondary);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--pico-border-radius);
+}
+.site-header nav a:hover {
+  color: var(--brand-primary);
+  background: rgba(184, 28, 29, 0.06);
+}
+
+/* ---- Hero --------------------------------------------------------------- */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 3.5rem 0 2.5rem;
+  border-bottom: 1px solid var(--pico-muted-border-color);
+}
+.hero-text {
+  flex: 1 1 320px;
+}
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 0.5rem;
+}
+.hero h1 .eu {
+  color: var(--brand-primary);
+}
+.hero .lead {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--brand-secondary);
+  margin-bottom: 0.5rem;
+}
+.hero-sub {
+  color: #6a6a6a;
+  margin-bottom: 1.5rem;
+}
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.hero-badge {
+  flex: 0 0 auto;
+  text-align: center;
+}
+
+/* Brand call-to-action button */
+.btn-call {
+  --pico-background-color: var(--brand-primary);
+  --pico-border-color: var(--brand-primary);
+  --pico-color: #fff;
+}
+.btn-call:hover {
+  --pico-background-color: var(--brand-primary-hover);
+  --pico-border-color: var(--brand-primary-hover);
+}
+
+/* ---- Gütesiegel --------------------------------------------------------- */
+.guetesiegel {
+  width: 200px;
+  max-width: 45vw;
+  height: auto;
+}
+.guetesiegel--small {
+  width: 120px;
+  max-width: 30vw;
+  flex: 0 0 auto;
+}
+.guetesiegel-block {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  border-left: 4px solid var(--brand-primary);
+}
+
+/* ---- Sections ----------------------------------------------------------- */
+main > section {
+  padding: 2.5rem 0;
+}
+main > section h2 {
+  position: relative;
+  padding-bottom: 0.4rem;
+  margin-bottom: 1.5rem;
+}
+main > section h2::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 4px;
+  margin-top: 0.5rem;
+  background: var(--brand-primary);
+  border-radius: 2px;
+}
+
+/* ---- Leistungen cards --------------------------------------------------- */
+.leistungen-grid article {
+  height: 100%;
+  border-top: 3px solid var(--brand-primary);
+}
+.leistungen-grid h3 {
+  color: var(--brand-primary);
+  font-size: 1.2rem;
+}
+
+/* ---- Kontakt ------------------------------------------------------------ */
+/* Two equal columns on desktop (details + form); Pico stacks them on mobile. */
+.kontakt-card {
+  /* Match the Leistungen cards' style */
+  border-top: 3px solid var(--brand-primary);
+  height: 100%;
+  margin-bottom: 0;
+}
+.kontakt-card h3 {
+  color: var(--brand-primary);
+  font-size: 1.2rem;
+}
+.kontakt-card address {
+  font-style: normal;
+  line-height: 1.7;
+}
+.kontakt-card .label {
+  display: block;
+  font-family: var(--pico-font-family-monospace);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand-primary);
+  margin-top: 0.5rem;
+}
+
+/* Contact form */
+.kontakt-form-card .optional {
+  color: var(--pico-muted-color);
+  font-weight: normal;
+}
+.kontakt-form-card button {
+  width: auto;
+}
+.kontakt-form-card .form-hint {
+  margin: 0.75rem 0 0;
+  font-size: 0.8rem;
+  color: var(--pico-muted-color);
+}
+
+/* ---- Footer / Impressum ------------------------------------------------- */
+.site-footer {
+  background: var(--brand-secondary);
+  /* Override Pico's text colour so all descendants (dd, p, …) inherit light text
+     instead of the dark brand grey set globally on --pico-color. */
+  --pico-color: #ededed;
+  color: #ededed;
+  margin-top: 2rem;
+  padding: 2.5rem 0;
+}
+.site-footer h2 {
+  color: #fff;
+  margin-bottom: 0.25rem;
+}
+.site-footer .impressum-sub {
+  color: #c4c4c4;
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+dl.impressum {
+  display: grid;
+  grid-template-columns: minmax(140px, 220px) 1fr;
+  gap: 0.4rem 1.5rem;
+  margin: 0 0 1.5rem;
+  font-size: 0.95rem;
+}
+dl.impressum dt {
+  font-family: var(--pico-font-family-monospace);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #b1b1b1;
+}
+dl.impressum dd {
+  margin: 0;
+  color: #f2f2f2;
+}
+.site-footer a {
+  color: #fff;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.5);
+}
+.site-footer .copyright {
+  font-size: 0.85rem;
+  color: #b9b9b9;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 1rem;
+  margin: 0;
+}
+
+/* ---- Responsive --------------------------------------------------------- */
+@media (max-width: 640px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .site-header nav ul {
+    flex-wrap: wrap;
+  }
+  .hero {
+    padding-top: 2rem;
+  }
+  dl.impressum {
+    grid-template-columns: 1fr;
+    gap: 0.1rem 0;
+  }
+  dl.impressum dt {
+    margin-top: 0.75rem;
+  }
+}

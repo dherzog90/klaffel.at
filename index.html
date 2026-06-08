@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Elektro W. Klaffel e.U. – Elektrotechnik in Gedersdorf &amp; Umgebung</title>
+  <meta name="description" content="Elektro W. Klaffel e.U. – staatlich geprüfte Elektrotechnik in Brunn im Felde, Gedersdorf und der Region Krems. Elektroinstallationen, Planung &amp; Bauaufsicht und zertifizierte Energieberatung.">
+  <meta name="author" content="Elektro W. Klaffel e.U.">
+  <link rel="icon" href="logo.png" type="image/png">
+  <!-- Lightweight CSS framework (Pico.css) – self-hosted, no CDN -->
+  <link rel="stylesheet" href="assets/css/pico.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Sticky header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#start" class="logo-link" aria-label="Elektro W. Klaffel e.U. – Startseite">
+        <img src="logo.png" alt="Elektro W. Klaffel e.U. Logo" class="site-logo">
+      </a>
+      <nav aria-label="Hauptnavigation">
+        <ul>
+          <li><a href="#start">Start</a></li>
+          <li><a href="#leistungen">Leistungen</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Hero -->
+    <section id="start" class="hero">
+      <div class="hero-text">
+        <h1>Elektro W. Klaffel <span class="eu">e.U.</span></h1>
+        <p class="lead">Staatlich geprüfte Elektrotechnik in der Region Krems</p>
+        <p class="hero-sub">Elektroinstallationen, Planung &amp; Bauaufsicht sowie zertifizierte Energieberatung – sauber, normgerecht und zuverlässig</p>
+        <div class="hero-actions">
+          <a href="tel:+4366473446198" role="button" class="btn-call">Jetzt anrufen</a>
+          <a href="#kontakt" role="button" class="secondary outline">Kontakt</a>
+        </div>
+      </div>
+      <div class="hero-badge">
+        <img src="elektrotechnik.png" alt="Gütesiegel: Elektrotechnik – staatlich geprüft" class="guetesiegel">
+      </div>
+    </section>
+
+    <!-- Leistungen -->
+    <section id="leistungen">
+      <h2>Leistungen</h2>
+      <div class="grid leistungen-grid">
+        <article>
+          <h3>Elektroinstallationen</h3>
+          <p>
+            Installation, Erweiterung und Sanierung von Elektroanlagen in Neubau und Bestand –
+            fachgerecht, normgerecht und sauber ausgeführt.
+          </p>
+        </article>
+        <article>
+          <h3>Planung &amp; Bauaufsicht</h3>
+          <p>
+            Durchdachte Planung Ihrer Elektroinstallation sowie örtliche Bauaufsicht und Kontrolle
+            direkt auf der Baustelle.
+          </p>
+        </article>
+        <article>
+          <h3>Zertifizierte Energieberatung</h3>
+          <p>
+            Zertifizierte Energieberatung für effizienten Stromverbrauch und nachhaltige,
+            zukunftssichere Lösungen in Ihrem Zuhause.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Kontakt -->
+    <section id="kontakt">
+      <h2>Kontakt</h2>
+      <div class="grid kontakt-grid">
+        <article class="kontakt-card">
+          <h3>Elektro W. Klaffel e.U.</h3>
+          <address>
+            <span class="label">Adresse</span>
+            Leithenstraße 8, Tür 2<br>
+            3494 Brunn im Felde
+            <br><br>
+            <span class="label">Telefon</span>
+            <a href="tel:+4366473446198">+43 664 73446198</a><br>
+            <span class="label">E-Mail</span>
+            <a href="mailto:elektro@klaffel.at">elektro@klaffel.at</a>
+          </address>
+        </article>
+
+        <article class="kontakt-card kontakt-form-card">
+          <h3>Schreiben Sie uns</h3>
+          <form id="kontakt-form" novalidate>
+            <label for="kf-name">
+              Name
+              <input type="text" id="kf-name" name="name" autocomplete="name" required>
+            </label>
+            <label for="kf-email">
+              E-Mail
+              <input type="email" id="kf-email" name="email" autocomplete="email" required>
+            </label>
+            <label for="kf-telefon">
+              Telefon <span class="optional">(optional)</span>
+              <input type="tel" id="kf-telefon" name="telefon" autocomplete="tel">
+            </label>
+            <label for="kf-nachricht">
+              Nachricht
+              <textarea id="kf-nachricht" name="nachricht" rows="5" required></textarea>
+            </label>
+            <button type="submit" class="btn-call">Absenden</button>
+            <p class="form-hint">Beim Absenden öffnet sich Ihr E-Mail-Programm mit der vorausgefüllten Nachricht.</p>
+          </form>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer / Impressum -->
+  <footer id="impressum" class="site-footer">
+    <div class="container">
+      <h2>Impressum</h2>
+      <p class="impressum-sub">Offenlegung gemäß § 5 ECG und § 25 MedienG</p>
+      <dl class="impressum">
+        <dt>Firma</dt><dd>Elektro W. Klaffel e.U.</dd>
+        <dt>Inhaber</dt><dd>Wilfried Franz Klaffel</dd>
+        <dt>Anschrift</dt><dd>Leithenstraße 8, Tür 2, 3494 Brunn im Felde, Österreich</dd>
+        <dt>Kontakt</dt><dd><a href="tel:+4366473446198">+43 664 73446198</a> · <a href="mailto:elektro@klaffel.at">elektro@klaffel.at</a></dd>
+        <dt>Unternehmensgegenstand</dt><dd>Elektrotechnik</dd>
+        <dt>Mitgliedschaft</dt><dd>Wirtschaftskammer Niederösterreich, Landesinnung der Elektro-, Gebäude-, Alarm- und Kommunikationstechniker</dd>
+        <dt>Anwendbare Vorschrift</dt><dd>Gewerbeordnung (GewO 1994), <a href="https://www.ris.bka.gv.at" target="_blank" rel="noopener">www.ris.bka.gv.at</a></dd>
+        <dt>Aufsichtsbehörde</dt><dd>Bezirkshauptmannschaft Krems</dd>
+        <!-- TODO: UID-Nummer und Firmenbuchnummer ergänzen, sobald verfügbar -->
+        <dt>UID-Nr.</dt><dd>[UID-Nummer ergänzen]</dd>
+      </dl>
+      <p class="copyright">© 2026 Elektro W. Klaffel e.U. · Alle Rechte vorbehalten.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/contact.js" defer></script>
+</body>
+</html>
